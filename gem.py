@@ -1,4 +1,4 @@
-#!/usr/bin/env -S uv run --script
+#!/usr/bin/env -S uv run
 # /// script
 # requires-python = ">=3.13"
 # dependencies = [
@@ -35,12 +35,13 @@ args = parser.parse_args()
 
 # Get the full model name from the lookup table
 model = MODEL_LOOKUP[args.model]
+prompt = args.prompt
 
 client = genai.Client(api_key=api_key)
 
 response = client.models.generate_content(
     model="gemini-2.0-flash",
-    contents="Explain how AI works",
+    contents=prompt,
 )
 
 print(response.text)
