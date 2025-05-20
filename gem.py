@@ -9,10 +9,8 @@ api_key = os.environ.get("GEMINI_API_KEY")
 
 # Model lookup table
 MODEL_LOOKUP = {
-    "flash": "gemini-1.5-flash",
-    "flash2": "gemini-2.0-flash-exp",
-    "exp": "gemini-exp-1206",
-    "think": "gemini-2.0-flash-thinking-exp-1219"
+    "flash": "gemini-2.5-flash-preview-05-20",
+    "pro": "gemini-2.5-pro-preview-05-06"
 }
 
 # Default model
@@ -32,7 +30,7 @@ client = genai.Client(api_key=api_key)
 prompt = args.prompt
 
 response = client.models.generate_content(
-    model="gemini-2.0-flash",
+    model=model,
     contents=prompt,
 )
 
