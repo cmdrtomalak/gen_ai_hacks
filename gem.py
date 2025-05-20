@@ -14,7 +14,7 @@ MODEL_LOOKUP = {
 }
 
 # Default model
-DEFAULT_MODEL = "flash2"
+DEFAULT_MODEL = "flash"
 
 parser = argparse.ArgumentParser(description="Generate text using the Gemini API.")
 parser.add_argument("-m", "--model", choices=MODEL_LOOKUP.keys(), default=DEFAULT_MODEL,
